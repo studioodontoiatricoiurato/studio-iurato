@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Odontoiatrico Iurato | Palermo - Gnatologia, Ortodonzia ed Estetica Dentale</title>
+  <meta name="description" content="Studio Odontoiatrico Dott. Antonino Iurato a Palermo. Oltre 30 anni di esperienza in Gnatologia, Ortodonzia, Condilografia Digitale, Implantologia ed Estetica Dentale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #ffffff;
+      --bg-soft: #f4f5f7;
+      --bg-card: #f8f9fa;
+      --iurato-navy: #0b1340;
+      --iurato-teal: #0082b4;
+      --iurato-teal-hover: #006992;
+      --text-dark: #0b1340;
+      --text-muted: #5a6578;
+      --border-color: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, .serif-font {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Header Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.6rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 120px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      mix-blend-mode: multiply; /* Fonde perfettamente lo sfondo chiaro dell'immagine con l'header */
+    }
+
+    .logo-text-fallback {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text-fallback strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: var(--iurato-navy);
+      line-height: 1;
+      text-transform: lowercase;
+    }
+
+    .logo-text-fallback span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      color: var(--iurato-navy);
+      text-transform: lowercase;
+      font-weight: 500;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--iurato-navy);
+    }
+
+    .btn-teal {
+      background-color: var(--iurato-teal);
+      color: #ffffff;
+      padding: 0.75rem 1.4rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.2s ease;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-teal:hover {
+      background-color: var(--iurato-teal-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--iurato-navy);
+      background: transparent;
+      color: var(--iurato-navy);
+      padding: 0.75rem 1.4rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-outline:hover {
+      background: var(--bg-soft);
+    }
+
+    /* Hero Section Responsive */
+    .hero {
+      min-height: 88vh;
+      padding: 12rem 5% 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, var(--bg-soft) 0%, #ffffff 100%);
+    }
+
+    .hero-subtitle {
+      color: var(--iurato-teal);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.15;
+      margin-bottom: 1.8rem;
+      max-width: 900px;
+      color: var(--iurato-navy);
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin-bottom: 2.8rem;
+      font-weight: 400;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Sections Shared Styles */
+    section {
+      padding: 5.5rem 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--iurato-navy);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title p {
+      color: var(--iurato-teal);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Manifesto Section */
+    .manifesto {
+      background-color: var(--bg-soft);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .manifesto-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-style: italic;
+      color: var(--iurato-navy);
+      max-width: 850px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.35;
+    }
+
+    /* Innovation Feature */
+    .innovation-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 2.5rem;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .feature-tag {
+      position: absolute;
+      top: -12px;
+      left: 2rem;
+      background: var(--iurato-navy);
+      color: #ffffff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .feature-card h3 {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      color: var(--iurato-navy);
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      font-size: 0.98rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      border-radius: 12px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .service-card:hover {
+      border-color: var(--iurato-teal);
+      transform: translateY(-2px);
+    }
+
+    .service-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--iurato-navy);
+      margin-bottom: 0.8rem;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    /* Studio Experience */
+    .lounge {
+      background: var(--bg-main);
+    }
+
+    .pilars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pilar-item {
+      padding: 2rem;
+      border-radius: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+    }
+
+    .pilar-item h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--iurato-navy);
+    }
+
+    .pilar-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Doctor Section */
+    .doctor-profile {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .doctor-info h3 {
+      font-size: 2.3rem;
+      margin-bottom: 0.4rem;
+      color: var(--iurato-navy);
+    }
+
+    .doctor-title {
+      color: var(--iurato-teal);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .doctor-info p {
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      font-size: 0.98rem;
+    }
+
+    /* Concierge / Contatti */
+    .concierge-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+    }
+
+    .contact-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .action-card {
+      background: #ffffff;
+      padding: 1.6rem;
+      text-align: center;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      transition: border-color 0.2s;
+    }
+
+    .action-card:hover {
+      border-color: var(--iurato-teal);
+    }
+
+    .action-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      color: var(--iurato-navy);
+    }
+
+    .action-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 0.9rem 1.1rem;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      color: var(--text-dark);
+      font-family: inherit;
+      border-radius: 8px;
+      font-size: 0.92rem;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--iurato-teal);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 5%;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      background: var(--bg-soft);
+    }
+
+    footer p {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Ottimizzazione specifica per Smartphone */
+    @media (max-width: 768px) {
+      header {
+        padding: 0.5rem 4%;
+      }
+      nav { display: none; } /* Nasconde il menu su schermi piccoli per dare massimo spazio al logo e al tasto WhatsApp */
+      .logo-img { height: 75px; }
+      .hero { padding-top: 9rem; }
+      .hero-cta-group { flex-direction: column; width: 100%; }
+      .btn-teal, .btn-outline { width: 100%; text-align: center; }
+      .concierge-box { padding: 1.8rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="logo-container">
+      <img src="logo studio.jpeg" alt="Studio Odontoiatrico Iurato" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+      <div id="logo-fallback" class="logo-text-fallback" style="display: none;">
+        <strong>iurato</strong>
+        <span>studio odontoiatrico</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#innovazione">Tecnologia</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#studio">Lo Studio</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <a href="https://wa.me/390910000000?text=Buongiorno,%20desidero%20richiedere%20informazioni%20per%20una%20consulenza." class="btn-teal" target="_blank">Chat Whatsapp</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-subtitle">Eccellenza Clinica & Cura del Dettaglio</div>
+    <h1>L'Architettura del Sorriso e del Volto</h1>
+    <p>Studio Odontoiatrico Iurato. Oltre trent'anni di tradizione clinica a Palermo integrati con l'innovazione della Condilografia e Assiografia Digitale Computerizzata.</p>
+    <div class="hero-cta-group">
+      <a href="https://wa.me/390910000000?text=Buongiorno,%20vorrei%20riservare%20una%20consulenza." class="btn-teal" target="_blank">Richiedi una Consulenza</a>
+      <a href="tel:+390910000000" class="btn-outline">Chiama lo Studio</a>
+    </div>
+  </section>
+
+  <!-- Manifesto -->
+  <section class="manifesto">
+    <div class="manifesto-quote">
+      "Progettiamo soluzioni su misura per valorizzare la salute, l'estetica e l'armonia del tuo viso."
+    </div>
+    <p style="color: var(--text-muted); max-width: 750px; margin: 0 auto; font-size: 1rem;">
+      Nel cuore di Palermo, ogni percorso d'intervento unisce benessere dentale, salute muscolare e tecnologie digitali di ultima generazione.
+    </p>
+  </section>
+
+  <!-- Highlight Tecnologia Unica -->
+  <section id="innovazione">
+    <div class="section-title">
+      <p>Diagnostica Avanzata a Palermo</p>
+      <h2>Assiografia & Condilografia Digitale</h2>
+    </div>
+    <div class="innovation-grid">
+      <div class="feature-card">
+        <div class="feature-tag">Gnatologia Digitale</div>
+        <h3>La Scienza dell'Armonia</h3>
+        <p>Siamo tra i pochissimi centri specializzati ad adottare l'<strong>Assiografo e Condilografo Digitale Computerizzato</strong>, uno strumento ad alta precisione che rileva al millimetro la dinamica dell'articolazione temporo-mandibolare.</p>
+        <p>Permette di individuare la causa di bruxismo, tensioni muscolari e serramento notturno, ripristinando l'equilibrio della muscolatura facciale e della postura.</p>
+      </div>
+      <div>
+        <h3 class="serif-font" style="font-size: 2.1rem; margin-bottom: 1.5rem; color: var(--iurato-navy);">I Vantaggi per il Paziente</h3>
+        <ul style="list-style: none; color: var(--text-muted); line-height: 2.2;">
+          <li style="display: flex; align-items: center; gap: 0.8rem;"><span style="color: var(--iurato-teal); font-weight: bold;">✓</span> Trattamento mirato di bruxismo e dolori articolari</li>
+          <li style="display: flex; align-items: center; gap: 0.8rem;"><span style="color: var(--iurato-teal); font-weight: bold;">✓</span> Mappatura digitale 3D del movimento mandibolare</li>
+          <li style="display: flex; align-items: center; gap: 0.8rem;"><span style="color: var(--iurato-teal); font-weight: bold;">✓</span> Decontrazione dei muscoli del viso per un'armonia naturale</li>
+          <li style="display: flex; align-items: center; gap: 0.8rem;"><span style="color: var(--iurato-teal); font-weight: bold;">✓</span> Progettazione protesica ed ortodontica ad elevata accuratezza</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione Servizi -->
+  <section id="servizi" style="background: var(--bg-soft); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="section-title">
+      <p>Aree di Specializzazione Clinica</p>
+      <h2>Trattamenti & Prestazioni</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h4>Gnatologia & Ortodonzia</h4>
+        <p>Correzione delle malocclusioni, riallineamento dentale invisibile e cura dei disturbi dell'articolazione temporo-mandibolare per adulti e bambini.</p>
+      </div>
+      <div class="service-card">
+        <h4>Implantologia & Chirurgia</h4>
+        <p>Sostituzione degli elementi dentali mancanti mediante impianti di ultima generazione ad elevata biocompatibilità, ripristinando la piena funzione masticatoria.</p>
+      </div>
+      <div class="service-card">
+        <h4>Estetica Dentale & Smile Design</h4>
+        <p>Sbiancamento professionale ad alta definizione, faccette in ceramica e progettazione digitale del sorriso per risultati armoniosi e naturali.</p>
+      </div>
+      <div class="service-card">
+        <h4>Protesi Dentale Fissa & Mobile</h4>
+        <p>Realizzazione di manufatti protesici altamente estetici e resistenti, progettati su misura per integrarsi perfettamente con il volto del paziente.</p>
+      </div>
+      <div class="service-card">
+        <h4>Igiene Dentale & Prevenzione</h4>
+        <p>Sedute di igiene professionale dedicate, rimozione del tartaro, fluoroprofilassi e programmi individuali per la prevenzione delle patologie parodontali.</p>
+      </div>
+      <div class="service-card">
+        <h4>Odontoiatria Conservativa</h4>
+        <p>Cura della carie, intarsi estetici e ricostruzioni dirette mediante materiali compositi invisibili di altissima qualità.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Studio Experience -->
+  <section class="lounge">
+    <div class="section-title">
+      <p>Accoglienza e Comfort</p>
+      <h2>L'Esperienza in Studio</h2>
+    </div>
+    <div class="pilars-grid">
+      <div class="pilar-item">
+        <h4>Accoglienza Curata</h4>
+        <p>Un caffè espresso di qualità per rendere piacevole ogni momento prima della tua visita.</p>
+      </div>
+      <div class="pilar-item">
+        <h4>Ambiente Moderno</h4>
+        <p>Spazi puliti, ordinati e rilassanti, progettati per accoglierti in un clima sereno e confortevole.</p>
+      </div>
+      <div class="pilar-item">
+        <h4>Massima Riservatezza</h4>
+        <p>Un'attenzione costante all'ascolto e alla privacy del paziente in ogni fase del trattamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lo Studio / Dottore -->
+  <section id="studio" style="background: var(--bg-soft); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="doctor-profile">
+      <div class="doctor-info">
+        <div class="doctor-title">Fondatore & Direttore Sanitario</div>
+        <h3 class="serif-font">Dott. Antonino Iurato</h3>
+        <p>Specialista in Ortodonzia e Gnatologia con oltre 30 anni di attività professionale continua a Palermo.</p>
+        <p>Il Dott. Iurato affianca all'esperienza clinica ultratrentennale l'utilizzo delle più recenti tecnologie di Digital Smile Design e diagnostica condilografica per garantire cure d'eccellenza.</p>
+      </div>
+      <div style="border: 1px solid var(--border-color); padding: 2.2rem; text-align: center; background: #ffffff; border-radius: 12px;">
+        <h4 class="serif-font" style="font-size: 2rem; color: var(--iurato-navy); margin-bottom: 0.6rem;">Oltre 30 Anni</h4>
+        <p style="color: var(--text-muted);">Di professionalità e dedizione alla salute e all'estetica dentale a Palermo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contatti & Segreteria -->
+  <section id="contatti">
+    <div class="section-title">
+      <p>Segreteria Studio</p>
+      <h2>Contatta lo Studio</h2>
+    </div>
+    
+    <div class="concierge-box">
+      <div class="contact-actions">
+        <!-- Bottone WhatsApp -->
+        <div class="action-card">
+          <h4>WhatsApp Direct</h4>
+          <p>Messaggio rapido con la nostra reception</p>
+          <a href="https://wa.me/390910000000?text=Buongiorno,%20desidero%20maggiori%20informazioni." class="btn-teal" style="width:100%; display:block;" target="_blank">Invia un Messaggio</a>
+        </div>
+
+        <!-- Bottone Chiamata -->
+        <div class="action-card">
+          <h4>Telefono Studio</h4>
+          <p>Parla con la nostra segreteria</p>
+          <a href="tel:+390910000000" class="btn-outline" style="width:100%; display:block;">Chiama Ora</a>
+        </div>
+      </div>
+
+      <!-- Request Call Back -->
+      <form onsubmit="event.preventDefault(); alert('Grazie. La segreteria la ricontatterà nell\'orario richiesto.');">
+        <h3 class="serif-font" style="font-size: 1.5rem; margin-bottom: 1.2rem; text-align: center; color: var(--iurato-navy);">Richiedi di Essere Ricontattato</h3>
+        <div class="form-group">
+          <input type="text" placeholder="Nome e Cognome" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="Numero di Telefono" required>
+        </div>
+        <div class="form-group">
+          <textarea rows="3" placeholder="Fascia oraria preferita per essere richiamato"></textarea>
+        </div>
+        <button type="submit" class="btn-teal" style="width: 100%;">Invia Richiesta</button>
+      </form>
+
+      <div style="margin-top: 2.8rem; text-align: center; color: var(--text-muted); font-size: 0.88rem; border-top: 1px solid var(--border-color); padding-top: 1.8rem;">
+        <p><strong style="color: var(--iurato-navy);">Studio Odontoiatrico Dott. Antonino Iurato</strong></p>
+        <p>Via Principe di Palagonia 84, Palermo (Zona Libertà / Notarbartolo)</p>
+        <p style="margin-top: 0.5rem; font-size: 0.82rem; color: var(--iurato-teal);">📍 Informazioni su parcheggi e indicazioni stradali disponibili su richiesta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© Studio Odontoiatrico Dott. Antonino Iurato - Palermo</p>
+    <p>Gnatologia • Ortodonzia • Implantologia • Digital Smile Design</p>
+  </footer>
+
+</body>
+</html>
